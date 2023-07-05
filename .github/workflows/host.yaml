@@ -1,0 +1,15 @@
+name: deploy CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+        - uses: actions/checkout@v2
+        - run: |
+            console.log(done!)
