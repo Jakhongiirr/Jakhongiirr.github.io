@@ -1,298 +1,266 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
   <head>
-    <!--- basic page needs
-    ================================================== -->
-    <meta charset="utf-8" />
-    <title>Tibbiyotchi</title>
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-
-    <!-- mobile specific metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/vendor.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-
-    <!-- favicons
-    ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-    <link rel="manifest" href="site.webmanifest" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sportopia</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script src="./scripts/index.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4BC169",
+              secondary: "#777",
+              dark: "#222",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .title {
+          @apply text-4xl font-regular lg:text-7xl lg:text-left text-center;
+        }
+        .p {
+          @apply text-base text-center text-dark lg:text-2xl lg:text-left;
+        }
+        .button {
+          @apply py-4 px-24 text-sm w-fit font-semibold text-white bg-primary rounded-full hover:bg-green-600 duration-200;
+        }
+        .container {
+          @apply max-w-7xl mx-auto;
+        }
+      }
+    </style>
   </head>
-
-  <body id="top" class="ss-preload theme-static">
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-      <div id="loader" class="dots-fade">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-
-    <!-- intro
-    ================================================== -->
-    <section id="intro" class="s-intro">
-      <div class="s-intro__bg"></div>
-
-      <header class="s-intro__header">
-        <div class="s-intro__logo">
-          <a class="logo" href="#" style="color: white">
-            Tibbiyotchi
-          </a>
-        </div>
-      </header>
-      <!-- s-intro__header -->
-
-      <div class="row s-intro__content">
-        <div class="column">
-          <div class="text-pretitle">Xush kelibsiz!</div>
-
-          <h1 class="text-huge-title">
-            Tez orada <br />
-            siz uchun bizdan <br />
-            ajoyib yangilik bor!
-          </h1>
-
-          <div class="s-intro__content-bottom">
-            <div class="s-intro__content-bottom-block">
-              <h5>Kuzatib boring!</h5>
-
-              <ul class="social">
-                <li><a href="https://t.me/olmos_jamoasi">Telegram</a></li>
-                <li>
-                  <a href="https://www.instagram.com/olmos.jamoasi/"
-                    >Instagram</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <!-- end s-intro-content__bottom-block -->
-          </div>
-          <!-- end s-intro-content__bottom -->
-        </div>
-      </div>
-      <!-- s-intro__content -->
-
-      <div class="s-intro__notify" style="color:white">Ajoyib yangilik!</div>
-      <!-- s-intro__notify -->
-
-      <div hidden class="s-intro__modal ss-modal">
-        <div class="ss-modal__inner">
-          <span class="ss-modal__close"></span>
-
-          <svg
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
-          >
-            <path
-              d="M.5 4.5l7 4 7-4m-13-3h12a1 1 0 011 1v10a1 1 0 01-1 1h-12a1 1 0 01-1-1v-10a1 1 0 011-1z"
-              stroke="var(--color-2-dark)"
-            ></path>
-          </svg>
-
-          <h4>Sign Up</h4>
-
-          <p class="ss-modal__text">
-            Be the first to know about the latest updates and get exclusive
-            offer on our grand opening.
-          </p>
-
-          <form id="mc-form" class="mc-form">
-            <input
-              type="email"
-              name="EMAIL"
-              id="mce-EMAIL"
-              class="u-fullwidth text-center"
-              placeholder="Email Address"
-              title="The domain portion of the email address is invalid (the portion after the @)."
-              pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$"
-              required
-            />
-            <input
-              type="submit"
-              name="subscribe"
-              value="Subscribe"
-              class="btn--small btn--primary u-fullwidth"
-            />
-            <!-- <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_cdb7b577e41181934ed6a6a44_9a91cfe7b3" tabindex="-1" value=""></div> -->
-            <div class="mc-status"></div>
-          </form>
-        </div>
-        <!-- end ss-modal__inner -->
-      </div>
-      <!-- end ss-modal -->
-
-      <div class="s-intro__scroll">
-        <a href="#hidden" class="smoothscroll"> Scroll For More </a>
-      </div>
-      <!-- s-intro__scroll -->
-    </section>
-    <!-- end s-intro -->
-
-    <!-- hidden element
-    ================================================== -->
-    <div id="hidden" aria-hidden="true" style="opacity: 0"></div>
-
-    <!-- details
-    ================================================== -->
-    <section id="details" class="s-details">
-      <div class="row">
-        <div class="column">
-          <h1 class="text-huge-title text-center">Tibbiyotchi</h1>
-
-          <nav class="tab-nav">
-            <ul class="tab-nav__list">
-              <li class="active" data-id="tab-about">
-                <a href="#0">
-                  <span>Biz haqimizda</span>
-                </a>
-              </li>
-              <li>
-                <a href="#tab-services">
-                  <span>Nima taklif qilamiz</span>
-                </a>
-              </li>
-              <li>
-                <a href="#tab-contact">
-                  <span>Bog'lanish</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <!-- end tab-nav -->
-
-          <div class="tab-content">
-            <!-- 01 - tab about -->
-            <div id="tab-about" class="tab-content__item">
-              <div class="row tab-content__item-header">
-               
-              </div>
-
-              <div class="row">
-                <div class="column">
-                  <p class="lead">
-                    Biz tibbiyotchi jamoasimiz, siz uchun qulay dastur ustida ishlayapmiz. Tez orada sizni xursand qilamiz!
-                  </p>
-
-  
-
-
-                </div>
-              </div>
-            </div>
-            <!-- end 01 - tab about -->
-
-            <!-- 02 - tab services -->
-            <div id="tab-services" class="tab-content__item">
-              <div class="row tab-content__item-header">
-               
-              </div>
-
-              <div class="row">
-                <div class="column">
-                  <p class="lead">
-                  
-                      Biz sizni klinika, shifokor, labaratoriyalar bilan bog'laymiz va boshqa ko'plab yo'nalishlarda og'iringizni yengil qilamiz!
-                    </p>
-                </div>
-              </div>
-
-             
-              <!-- end services-list -->
-            </div>
-            <!-- end 02 - tab services -->
-
-            <!-- 03 - tab contact -->
-            <div id="tab-contact" class="tab-content__item">
-              <div class="row tab-content__item-header">
-                <div class="column">
-                  <h2>Bog'lanish</h2>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="column">
-                  <p class="lead">
-                    Ijtimoiy tarmoqlarimizni kuzatib boring!
-                  </p>
-
-                  <div class="row">
-
-                    <div class="column lg-6 tab-12">
-                      <h4>Obuna bo'ling!</h4>
-
-                      <ul class="link-list">
-                        <li>
-                          <a href="https://t.me/olmos_jamoasi">Telegram</a>
-                        </li>
-                        <li>
-                          <a href="https://instagram.com/olmos.jamoasi"
-                            >Instagram</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <p class="tab-content__item-bottom">
-                    <a href="https://t.me/Sh_Raxmonjonov" class="contact-email"
-                      >Shoxjaxon Raxmonjonov</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!-- end 03 - tab contact -->
-          </div>
-          <!-- end tab content -->
-
-          <!-- footer  -->
-          <footer>
-            <div class="ss-copyright">
-              <span>© Copyright Tibbiyotchi 2023</span>
-              <span
-                >Design by
-                <a href="https://www.styleshout.com/">StyleShout</a></span
-              >
-            </div>
-          </footer>
-        </div>
-      </div>
-
-      <div class="ss-go-top">
-        <a class="smoothscroll" title="Back to Top" href="#top">
-          <span>Back to Top</span>
-          <svg
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            width="26"
-            height="26"
-          >
-            <path
-              d="M7.5 1.5l.354-.354L7.5.793l-.354.353.354.354zm-.354.354l4 4 .708-.708-4-4-.708.708zm0-.708l-4 4 .708.708 4-4-.708-.708zM7 1.5V14h1V1.5H7z"
-              fill="currentColor"
-            ></path>
-          </svg>
+  <body>
+    <header
+      id="home"
+      style="background-image: url(./assets/images/bg.png)"
+      class="bg-cover py-5 px-4 relative lg:py-14 bg-center"
+    >
+      <div class="flex justify-between items-center relative z-[11] container">
+        <a href="#">
+          <img class="relative z-[14]" src="./assets/icons/logo.svg" alt="" />
         </a>
+        <menu
+          id="menu"
+          class="flex lg:relative lg:flex-row lg:bg-transparent lg:h-fit lg:w-auto lg:top-0 duration-500 -top-[120vh] flex-col gap-8 lg:gap-14 font-light lg:text-[20px] text-white justify-center text-xl items-center bg-[#000000cc] backdrop-blur-md fixed left-0 w-screen h-screen right-0 z-[12]"
+        >
+          <li class="hover:text-green-500">
+            <a href="#home">Home</a>
+          </li>
+          <li class="hover:text-green-500">
+            <a href="#about">About</a>
+          </li>
+          <li class="hover:text-green-500">
+            <a href="#download">Download</a>
+          </li>
+          <li class="hover:text-green-500">
+            <a href="#contact">Contact</a>
+          </li>
+        </menu>
+        <img
+          id="hamburger"
+          class="relative z-[14] lg:hidden"
+          src="./assets/icons/hamburger.svg"
+          alt=""
+        />
       </div>
-      <!-- end ss-go-top -->
-    </section>
-    <!-- end s-details -->
+      <section
+        class="container flex flex-col gap-5 my-20 text-white relative z-10 lg:py-36 lg:gap-8"
+      >
+        <h1
+          class="text-4xl lg:leading-[100px] leading-[60px] font-regular lg:text-7xl lg:text-left text-left"
+        >
+          Unlock your <br />
+          inner <span class="font-bold">Champion!</span>
+        </h1>
+        <p
+          class="text-base text-left text-white lg:text-2xl lg:text-left lg:max-w-3xl"
+        >
+          Weather you are an ardent tennis player seeking partner for a match, a
+          group of friends in search of a nearby football field, or a pitch
+          owner with the need of efficent management platform, our platform is
+          designed to be the ultimate destination!
+        </p>
+        <a
+          href="#download"
+          class="mt-4 lg:py-6 py-4 w-fit px-24 text-sm font-semibold text-white bg-primary rounded-full hover:bg-green-600 duration-200"
+        >
+          Download
+        </a>
+      </section>
+      <div
+        class="absolute top-0 left-0 bottom-0 right-0 w-full h-full bg-[#00000033] z-1"
+      ></div>
+    </header>
 
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <section id="about" class="container py-14 px-4 lg:flex">
+      <div class="hidden lg:block lg:flex-1 translate-y-[200px]">
+        <img src="./assets/images/player.png" alt="" />
+      </div>
+      <div
+        class="flex flex-col gap-8 items-center lg:flex-1 lg:items-start lg:mt-24 lg:gap-16"
+      >
+        <h1 class="text-4xl font-regular lg:text-7xl lg:text-left text-center">
+          About the app
+        </h1>
+        <p
+          class="text-base text-center text-dark lg:text-2xl lg:text-left text-secondary lg:leading-[40px]"
+        >
+          Discover, book, and connect with sports venues for basketball,
+          football, tennis and more. Make connections, message friends and build
+          communities. Find nearby players and join games effortlessly. Enjoy
+          the convenience of in-app purchases for sports venue bookings.
+        </p>
+        <div class="flex flex-col gap-4 lg:flex-row">
+          <a
+            class="py-4 px-24 text-sm w-fit font-semibold text-white bg-primary rounded-full hover:bg-green-600 duration-200"
+            href="#contact"
+            >Contact</a
+          >
+          <a
+            class="py-4 px-24 text-sm w-fit font-semibold border-secondary border text-secondary rounded-full hover:bg-gray-200 duration-200"
+            href="#results"
+            >Results</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="bg-primary py-16 px-4 text-white">
+      <div class="lg:flex container">
+        <div class="flex-1 hidden lg:flex w-full"></div>
+        <div
+          class="flex-1 lg:grid lg:grid-cols-2 flex flex-col gap-12 items-center"
+        >
+          <div class="flex flex-col gap-2 items-center lg:items-start">
+            <p class="uppercase text-xl">users</p>
+            <h1 class="text-[56px] font-bold">1 MLN+</h1>
+          </div>
+          <div class="flex flex-col gap-2 items-center lg:items-start">
+            <p class="uppercase text-xl">Sports</p>
+            <h1 class="text-[56px] font-bold">10 +</h1>
+          </div>
+          <div class="flex flex-col gap-2 items-center lg:items-start">
+            <p class="uppercase text-xl">Connections</p>
+            <h1 class="text-[56px] font-bold">2 MLN+</h1>
+          </div>
+          <div class="flex flex-col gap-2 items-center lg:items-start">
+            <p class="uppercase text-xl">Events</p>
+            <h1 class="text-[56px] font-bold">2 MLN+</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="container py-14 px-4 lg:flex lg:items-center">
+      <div
+        class="flex flex-col gap-8 items-center lg:flex-1 lg:items-start lg:mt-24 lg:gap-16"
+      >
+        <h1 class="text-4xl font-regular lg:text-7xl lg:text-left text-center">
+          Download the app
+        </h1>
+        <p
+          class="text-base text-center text-dark lg:text-2xl lg:text-left text-secondary lg:leading-[40px]"
+        >
+          Downloading SportsConnect means joining a vibrant community that
+          thrives on the energy of sports. Share your victories, celebrate your
+          milestones, and inspire others with your journey!
+        </p>
+        <div class="flex flex-col gap-4 lg:flex-row items-center">
+          <a href="#"><img src="./assets/images/google.png" alt="" /></a>
+          <a href="#"><img src="./assets/images/apple.png" alt="" /></a>
+        </div>
+      </div>
+      <div class="lg:flex lg:flex-1 items-center lg:items-end p-10 lg:pl-40">
+        <img src="./assets/images/app.png" alt="" />
+      </div>
+    </section>
+
+    <section
+      id="contact"
+      style="background-image: url(./assets/images/subscrive_bg.png)"
+      class="bg-cover relative py-16 bg-center px-6"
+    >
+      <div class="relative z-10 flex flex-col gap-9">
+        <h1 class="text-[36px] lg:text-7xl text-white text-center">
+          <span class="text-2xl lg:text-3xl font-bold">
+            Did you interested?</span
+          >
+          <br />
+          Do not wait, contact us
+        </h1>
+      </div>
+      <form
+        action="#"
+        class="z-10 relative flex lg:max-w-[600px] mx-auto bg-white flex rounded-full overflow-hidden mt-12 lg:mt-20 lg:mb-20"
+      >
+        <input
+          type="text"
+          class="text-lg p-4 grow focus:ring-0 outline-none border-0 pl-5"
+          placeholder="Email or phone number"
+        />
+        <button
+          class="py-4 px-24 text-sm w-fit font-semibold text-white bg-primary rounded-full hover:bg-green-600 duration-200"
+        >
+          Send
+        </button>
+      </form>
+      <div class="w-full h-full absolute bg-[#00000011] inset-0 z-1"></div>
+    </section>
+
+    <footer
+      class="container py-14 lg:flex lg:justify-between lg:items-center lg:pb-28"
+    >
+      <div
+        class="flex flex-col gap-8 items-center lg:flex-1 lg:items-start lg:mt-24 lg:gap-16"
+      >
+        <h1 class="text-4xl font-regular lg:text-6xl lg:text-left text-center">
+          Ready to get started?
+        </h1>
+        <p
+          class="text-base px-10 lg:px-0 lg:max-w-[700px] text-center text-dark lg:text-2xl lg:text-left text-secondary lg:leading-[40px]"
+        >
+          Keep calm and play some game, download the app and dive into it!
+        </p>
+        <div class="flex flex-col gap-4 lg:flex-row">
+          <a
+            class="py-5 px-24 text-base w-fit font-semibold text-white bg-black rounded-full hover:text-black hover:bg-white border border-black duration-200"
+            href="#download"
+            >Get Started</a
+          >
+        </div>
+      </div>
+      <menu class="lg:flex hidden lg:flex-col gap-10 text-xl">
+        <li>
+          <a href="https://www.instagram.com/sportopia.uz/">Instagram</a>
+        </li>
+        <li>
+          <a href="https://t.me/olmos_jamoasi">Telegram</a>
+        </li>
+        <li>
+          <a href="https://youtube.com">YouTube</a>
+        </li>
+        <li>
+          <a href="https://tiktok.com">TikTok</a>
+        </li>
+      </menu>
+    </footer>
+    <hr class="border-[#ccc]" />
+    <div
+      class="flex flex-col py-8 text-center gap-3 lg:justify-between lg:flex-row container"
+    >
+      <p class="text-base text-[#ccc]">Copyright 2023. By <a href="https://quix.uz">Quix</a><br/>Images from <a href="https://pinterest.com">pinterest</a></p>
+      <p class="text-base text-[#ccc]">
+        <a href="#" class="text-black underline">Privacy and policy</a> &
+        <a class="text-black underline" href="#">Terms of use</a>
+      </p>
+    </div>
   </body>
 </html>

@@ -1,0 +1,5 @@
+@import './font.css';
+
+html {
+    scroll-behavior: smooth;
+}
