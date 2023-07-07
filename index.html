@@ -39,19 +39,14 @@
     </style>
   </head>
   <body>
-    <header
-      id="home"
-      style="background-image: url(./assets/images/bg.png)"
-      class="bg-cover py-5 px-4 relative lg:py-14 bg-center"
-    >
-    <!-- <nav class="fixed w-full top-0 left-0 py-10 bg-gray-200"> -->
+    <nav class="fixed z-[9999] w-full py-5 bg-black bg-opacity-20 backdrop-blur-sm">
       <div class="flex justify-between items-center relative z-[11] container">
         <a href="#">
-          <img class="relative z-[14]" src="./assets/icons/logo.svg" alt="" />
+          <img class="relative z-[14] sm:ml-3" src="./assets/icons/logo.svg" alt="" />
         </a>
         <menu
           id="menu"
-          class="flex lg:relative lg:flex-row lg:bg-transparent lg:h-fit lg:w-auto lg:top-0 duration-500 -top-[120vh] flex-col gap-8 lg:gap-14 font-light lg:text-[20px] text-white justify-center text-xl items-center bg-[#000000cc] backdrop-blur-md fixed left-0 w-screen h-screen right-0 z-[12]"
+          class="flex lg:relative lg:flex-row lg:bg-transparent lg:h-fit lg:w-auto lg:top-0 duration-500 -top-[120vh] flex-col gap-8 lg:gap-14 font-light lg:text-[20px] text-white justify-center text-xl items-center bg-[#000000cc] fixed left-0 w-screen h-screen right-0 z-[12]"
         >
           <li class="hover:text-green-500">
             <a href="#home">Home</a>
@@ -68,12 +63,17 @@
         </menu>
         <img
           id="hamburger"
-          class="relative z-[14] lg:hidden"
+          class="relative z-[14] lg:hidden sm:mr-3"
           src="./assets/icons/hamburger.svg"
           alt=""
         />
       </div>
-    <!-- </nav> -->
+    </nav>
+    <header
+      id="home"
+      style="background-image: url(./assets/images/bg.png)"
+      class="bg-cover py-5 px-4 relative lg:py-14 bg-center"
+    >
       <section
         class="container flex flex-col gap-5 my-20 text-white relative z-10 lg:py-36 lg:gap-8"
       >
@@ -172,8 +172,8 @@
         <p
           class="text-base text-center text-dark lg:text-2xl lg:text-left text-secondary lg:leading-[40px]"
         >
-          Downloading the app means joining a vibrant community that
-          share same interests with you. Connect, play, enjoy!
+          Downloading the app means joining a vibrant community that share same
+          interests with you. Connect, play, enjoy!
         </p>
         <div class="flex flex-col gap-4 lg:flex-row items-center">
           <a href="#"><img src="./assets/images/google.png" alt="" /></a>
@@ -258,7 +258,10 @@
     <div
       class="flex flex-col py-8 text-center gap-3 lg:justify-between lg:flex-row container"
     >
-      <p class="text-base text-[#ccc]">Copyright 2023. By <a href="https://quix.uz">Quix</a><br/>Images from <a href="https://pinterest.com">pinterest</a></p>
+      <p class="text-base text-[#ccc]">
+        Copyright 2023. By <a href="https://quix.uz">Quix</a><br />Images from
+        <a href="https://pinterest.com">pinterest</a>
+      </p>
       <p class="text-base text-[#ccc]">
         <a href="#" class="text-black underline">Privacy and policy</a> &
         <a class="text-black underline" href="#">Terms of use</a>
